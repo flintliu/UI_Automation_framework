@@ -7,7 +7,9 @@ email: fliu@brandscreen.com
 """
 import time
 
-class optionSelecter(object):
+__all__ = ['OptionSelecter', 'LabelInput', 'OptionTable', 'InputTab', 'Button', 'RadioSet', 'DateWidget', 'OBJECT_MAP']
+
+class OptionSelecter(object):
 	def __init__(self, selecter):
 		self.selecter = selecter
 		self.all_options = None
@@ -41,7 +43,7 @@ class optionSelecter(object):
 				o.click()
 				break
 
-class labelInput(object):
+class LabelInput(object):
 	def __init__(self, label):
 		self.label = label
 
@@ -49,7 +51,7 @@ class labelInput(object):
 		self.label.send_keys(value)
 		self.label.send_keys("\n")
 
-class optionTable(object):
+class OptionTable(object):
 	def __init__(self, table):
 		self.table = table
 
@@ -69,7 +71,7 @@ class optionTable(object):
 	def change_seleted_option(self):
 		pass
 
-class inputTab(object):
+class InputTab(object):
 	def __init__(self, tab):
 		self.tab = tab
 
@@ -81,21 +83,21 @@ class inputTab(object):
 	def clean_value(self):
 		self.tab.clear()
 
-class button(object):
+class Button(object):
 	def __init__(self, button):
 		self.button = button
 
 	def click(self):
 		self.button.click()
 
-class radioSet(object):
+class RadioSet(object):
 	def __init__(self, radios):
 		self.radios = radios
 
 	def select_one(self, value):
 		self.radios[value].click()
 
-class dateWidget(object):
+class DateWidget(object):
 	def __init__(self, dateWidget):
 		self.widget = dateWidget
 
@@ -111,10 +113,10 @@ class dateWidget(object):
 		next_button = button(self.widget.find_element_by_link_text("Next"))
 		next_button.click()
 
-OBJECT_MAP = {"optSelecter": optionSelecter,\
-              "labelInput": labelInput,\
-              "optTable": optionTable,\
-              "inputTab": inputTab,\
-              "button": button,\
-              "radioSet": radioSet,\
-              "dateWidget": dateWidget}
+OBJECT_MAP = {"opt_selecter": OptionSelecter,\
+              "label_input": LabelInput,\
+              "opt_table": OptionTable,\
+              "input_tab": InputTab,\
+              "button": Button,\
+              "radioSet": RadioSet,\
+              "date_widget": DateWidget}

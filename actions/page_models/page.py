@@ -6,9 +6,9 @@ author: Flint Liu
 email: flintliu@hotmail.com
 """
 
-from .util.ele_selector import elementSelector
+from .util.ele_selector import ElementSelector
 
-class page(object):
+class Page(object):
 	def __init__(self):
 		self._driver = None
 		self._url = None

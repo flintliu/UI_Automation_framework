@@ -7,12 +7,12 @@ email: fliu@brandscreen.com
 """
 
 __version__ = "0.1"
-__all__ = ["elementSelector"]
+__all__ = ["ElementSelector"]
 
 from .object_models import *
 
-class elementSelector(object):
-    """
+class ElementSelector(object):
+"""
 element selector base class
 """
     def __init__(self,ele_name,elements_info,window):
